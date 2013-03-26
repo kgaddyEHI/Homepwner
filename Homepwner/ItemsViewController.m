@@ -75,5 +75,24 @@
     return [[self headerView]bounds].size.height;
 }
 
+-(IBAction)toggleEditingMode:(id)sender
+{
+    //if we are currently in editing mode
+    if([self isEditing])
+    {
+        //change the text button to inform the user of state
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        //turn off editing mode
+        [self setEditing:NO animated:YES];
+        
+    }
+    else{
+        //change the button
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        //turn off editing mode
+        [self setEditing:YES animated:YES];
+    }
+}
+
 
 @end
