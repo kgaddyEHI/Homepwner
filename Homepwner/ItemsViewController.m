@@ -10,8 +10,6 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 @implementation ItemsViewController
-//<UITableViewDataSource>
-
 
 -(id)init
 {
@@ -19,7 +17,7 @@
     //BNRItemStore *store = [[BNRItemStore alloc]init];
     if(self)
     {
-        for(int i=0;i<33; i++)
+        for(int i=0;i<5; i++)
         {
             [[BNRItemStore sharedStore] createItem];
         }
@@ -54,5 +52,28 @@
     [[cell textLabel] setText:[p description]];
     return cell;
 }
+
+-(UIView *)headerView
+{
+    //if we have not loaded the header view yet
+    if(!headerView)
+    {
+        //load the HeaderView.xib
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    return headerView;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [self headerView];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    //the height of the header section should be determined from the height of the view in the XIB file.
+    return [[self headerView]bounds].size.height;
+}
+
 
 @end
