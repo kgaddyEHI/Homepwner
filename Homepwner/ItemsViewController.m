@@ -114,8 +114,10 @@
         [sender setTitle:@"Done" forState:UIControlStateNormal];
         //turn off editing mode
         [self setEditing:YES animated:YES];
+   
     }
 }
+
 
 -(IBAction)addNewItem:(id)sender
 {
