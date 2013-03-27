@@ -17,10 +17,12 @@
     //BNRItemStore *store = [[BNRItemStore alloc]init];
     if(self)
     {
+        /*
         for(int i=0;i<5; i++)
         {
             [[BNRItemStore sharedStore] createItem];
         }
+         */
     }
     return self;
 }
@@ -75,6 +77,22 @@
     return [[self headerView]bounds].size.height;
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //if the view is asking for a delete command
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        BNRItemStore *ps = [BNRItemStore sharedStore];
+        NSArray *items = [ps allItems];
+        
+        BNRItem *p = [items objectAtIndex:[indexPath row]];
+        [ps removeItem:p];
+        
+        //we also remove the row from the table view
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 -(IBAction)toggleEditingMode:(id)sender
 {
     //if we are currently in editing mode
@@ -92,6 +110,22 @@
         //turn off editing mode
         [self setEditing:YES animated:YES];
     }
+}
+
+-(IBAction)addNewItem:(id)sender
+{
+    //make a new index path for the 0th section, last row
+    //int lastRow = [[self tableView] numberOfRowsInSection:0];
+    BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
+    
+    //figure out where thta item is in the array.
+    int lastRow =[[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+    
+    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    //insert the table into a new row
+    [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip] withRowAnimation:UITableViewRowAnimationTop];
+    
 }
 
 

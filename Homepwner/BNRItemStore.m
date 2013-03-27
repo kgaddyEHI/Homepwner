@@ -55,5 +55,9 @@
     return p;
 }
 
+-(void)removeItem:(BNRItem *)p
+{
+    [allItems removeObjectIdenticalTo:p];
+}
 
 @end
