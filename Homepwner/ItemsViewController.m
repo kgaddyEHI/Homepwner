@@ -92,6 +92,11 @@
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[BNRItemStore sharedStore] moveIndexAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
+}
+
 
 -(IBAction)toggleEditingMode:(id)sender
 {

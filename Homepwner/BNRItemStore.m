@@ -60,4 +60,22 @@
     [allItems removeObjectIdenticalTo:p];
 }
 
+-(void)moveIndexAtIndex:(int)from toIndex:(int)to
+{
+    if(from==to)
+    {
+        return;
+    }
+    //get pointer to the object being moved.
+    BNRItem *p = [allItems objectAtIndex:from];
+    
+    //remove from array;
+    [allItems removeObjectAtIndex:from];
+    
+    //insert into new location
+    [allItems insertObject:p atIndex:to];
+    
+    
+}
+
 @end
