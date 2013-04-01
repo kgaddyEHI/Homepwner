@@ -20,6 +20,8 @@
 		4B186EB11701DB3400449602 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B186EB01701DB3400449602 /* ItemsViewController.m */; };
 		4B186EB41701E07C00449602 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B186EB31701E07C00449602 /* BNRItem.m */; };
 		4B186EB71701E1B500449602 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B186EB61701E1B500449602 /* BNRItemStore.m */; };
+		4BFA5AF71709C80700531C09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA5AF51709C80700531C09 /* DetailViewController.m */; };
+		4BFA5AF81709C80700531C09 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFA5AF61709C80700531C09 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		4B186EB31701E07C00449602 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		4B186EB51701E1B500449602 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		4B186EB61701E1B500449602 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		4BFA5AF41709C80700531C09 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		4BFA5AF51709C80700531C09 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		4BFA5AF61709C80700531C09 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,9 @@
 		4B186E981701028F00449602 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				4BFA5AF41709C80700531C09 /* DetailViewController.h */,
+				4BFA5AF51709C80700531C09 /* DetailViewController.m */,
+				4BFA5AF61709C80700531C09 /* DetailViewController.xib */,
 				4B186EA11701028F00449602 /* HomepwnerAppDelegate.h */,
 				4B186EA21701028F00449602 /* HomepwnerAppDelegate.m */,
 				4B186EAF1701DB3400449602 /* ItemsViewController.h */,
@@ -174,6 +182,7 @@
 				4B186EA71701028F00449602 /* Default@2x.png in Resources */,
 				4B186EA91701028F00449602 /* Default-568h@2x.png in Resources */,
 				4B026784170242FA007F281D /* HeaderView.xib in Resources */,
+				4BFA5AF81709C80700531C09 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +198,7 @@
 				4B186EB11701DB3400449602 /* ItemsViewController.m in Sources */,
 				4B186EB41701E07C00449602 /* BNRItem.m in Sources */,
 				4B186EB71701E1B500449602 /* BNRItemStore.m in Sources */,
+				4BFA5AF71709C80700531C09 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
